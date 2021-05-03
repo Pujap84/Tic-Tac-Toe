@@ -1,0 +1,26 @@
+h1 {
+  justify-content: center;
+}
+
+.gameBoard {
+  display: grid;
+  font-size: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background-color: coral;
+  gap: 10px;
+  height: 500px;
+  width: 500px;
+}
+
+.gameBoard div {
+  border: 1px solid black;
+}
+
+.purple {
+  background-color: rgb(233, 37, 233);
+}
+
+.blue {
+  background-color: rgb(17, 39, 87);
+}
