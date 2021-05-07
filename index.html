@@ -9,24 +9,26 @@
 </head>
 <body>
   <h1 class="gameTitle">TIC TAC TOE</h1>
-  <input placeholder="Player 1 Enter Name" type="text">
-  <input placeholder="Player 2 Enter Name" type="text"><br>
-  <br><input value="Player 1 choose your button" type="text" name="" id="">
-  <button class="xbtn">X</button>
-  <button class="obtn">O</button><br>
-  <br><main class="gameBoard">
-    <div class="box1">1</div>
-    <div class="box2">2</div>
-    <div class="box3">3</div>
-    <div class="box4">4</div>
-    <div class="box5">5</div>
-    <div class="box6">6</div>
-    <div class="box7">7</div>
-    <div class="box8">8</div>
-    <div class="box9">9</div>
-  </main>
-  <h2 class="gameWinner"></h2>
-  <button class="restartBtn">Restart The Game</button>
+  <h2><input id="player1Name" placeholder="Player 1 Enter Your Name" type="text">
+  <input id="player2Name" placeholder="Player 2 Enter Your Name" type="text"></h2>
+  <div id="message">Player 1 Choose your Value</div>
+  <br><button class="xbtn">X</button>
+  <button class="obtn">O</button></h3><br>
+  <br><br><main class="gameBoard">
+    <div id="box1" class="row1 column1 diagonal1"></div>
+    <div id="box2" class="row1 column2"></div>
+    <div id="box3" class="row1 column3 diagonal2"></div>
+    <div id="box4" class="row2 column1"></div>
+    <div id="box5" class="row2 column2 diagonal1 diagonal2"></div>
+    <div id="box6" class="row2 column3"></div>
+    <div id="box7" class="row3 column1 diagonal2"></div>
+    <div id="box8" class="row3 column2"></div>
+    <div id="box9" class="row3 column3 diagonal1"></div>
+  </main><br>
+  <footer>
+  <div class="gameWinner">The Winner is...</div>
+  <br><button class="restartBtn">Restart The Game</button>
+</footer>
   <script src="main.js"></script>
 </body>
 </html>
