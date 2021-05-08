@@ -88,6 +88,8 @@ footer {
   background-color: powderblue;
   color: navy;
   width: 170px;
+  border-radius: 8px;
+  height: 30px;
 }
 
 #box1, #box2, #box4, #box5, #box7, #box8 {
