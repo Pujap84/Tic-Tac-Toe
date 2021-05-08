@@ -1,6 +1,6 @@
 # ticatactoe
 tictactoe project
-Here is the game url. 
+Here is the game url https://pujap84.github.io/Tic-Tac-Toe/
 Click on it and have a play!
 
 # How was it built
@@ -69,10 +69,11 @@ I have used the Blinking animation with its Keyframe at the start of the game
 - not adapted for mobiles
 - Unable to link the player names to 'X' and 'O'
 - Unable to display player turns
+- blinking animation not working in DOM
 
 
 # Wishlist
 - To figure out how to use a counter and tally scores(Visual score tally)
 - To make it a one player game versing the computer
 - counter options (probably using images?- pacman maybe? mario? several choices for players to choose from)
-- 
+- strike through all the way with every win!
