@@ -132,15 +132,7 @@ restartBtn.addEventListener('click', function(){
   document.querySelector('#player1Name').value = '';
   document.querySelector('#player2Name').value = '';
   document.querySelector('#message').textContent = 'Player 1 Choose your Value';
-  document.querySelector('#box1').textContent = '';
-  document.querySelector('#box2').textContent = '';
-  document.querySelector('#box3').textContent = '';
-  document.querySelector('#box4').textContent = '';
-  document.querySelector('#box5').textContent = '';
-  document.querySelector('#box6').textContent = '';
-  document.querySelector('#box7').textContent = '';
-  document.querySelector('#box8').textContent = '';
-  document.querySelector('#box9').textContent = '';
+  document.querySelector('.gameBoard div').textContent = '';
   document.querySelector('.gameWinner').textContent = 'The Winner is...';
   document.querySelector('.gameWinner').style.color = 'rgb(232, 43, 178)';
   document.querySelector('.gameWinner').style.fontSize = '20px';
