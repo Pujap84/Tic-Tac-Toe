@@ -11,12 +11,15 @@ let box6 = document.querySelector('#box6')
 let box7 = document.querySelector('#box7')
 let box8 = document.querySelector('#box8')
 let box9 = document.querySelector('#box9')
+let player1Name = document.querySelector('#player1Name')
+let player2Name = document.querySelector('#player2Name')
 
 let xBtn = document.querySelector('.xbtn')
 xBtn.addEventListener('click', function() {
   player1 = 'X'
   player2 = 'O'
   currentPlayer = player1
+  document.querySelector('#message').textContent = player1Name.value + ' selected ' + player1 + ' and ' + player2Name.value + ' selected ' + player2
   console.log(player1)
 })
 let oBtn = document.querySelector('.obtn')
@@ -24,8 +27,11 @@ oBtn.addEventListener('click', function() {
   player1 = 'O'
   player2 = 'X'
   currentPlayer = player1
+  document.querySelector('#message').textContent = player1Name.value + ' selected ' + player1 + ' and ' + player2Name.value + ' selected ' + player2
   console.log(player1)
 })
+
+
 const allDivs = document.querySelectorAll('.gameBoard div')
 for (let i = 0; i < allDivs.length; i++)
   allDivs[i].addEventListener('click', function (event) {
@@ -35,9 +41,11 @@ for (let i = 0; i < allDivs.length; i++)
       if (currentPlayer === 'X') { // if current player = X
         currentPlayer = 'O' // set Current player to O
         event.target.textContent = 'X'  // change value in the box to X
+        event.target.style.color = 'rgb(232, 43, 178)'
       } else { // if current player = O
         currentPlayer = 'X' //set current player to X
         event.target.textContent = 'O' // change value in the box to O
+        event.target.style.color = 'greenYellow'
       }
     }
     let row1Boxes = [box1, box2, box3]
@@ -82,6 +90,11 @@ for (let i = 0; i < allDivs.length; i++)
     }
     if (allTheSameRow1 === false && allTheSameRow2 === false && allTheSameRow3 === false && allTheSameColumn1 === false && allTheSameColumn2 === false && allTheSameColumn3 === false && allTheSameDiagonal1 === false && allTheSameDiagonal2 === false && boxesAreFull) {
       alert('Its a draw! Restart the game');
+      document.querySelector('.gameWinner').textContent = "It's a Draw!";
+      document.querySelector('.gameWinner').style.color = "greenYellow";
+      document.querySelector('.gameWinner').style.fontSize = "40px";
+      document.querySelector('.gameWinner').style.animateName = "blinking";
+      document.querySelector('.gameWinner').style.animateDuration = "3s";
     }
 })
 
@@ -95,11 +108,41 @@ function allSame(threeBoxes, playerValue){
   }
   if (allTheSame == true) {
     alert(playerValue + ' Wins! Well Done');
+    alert('Restart game');
     document.querySelector('.gameWinner').textContent = 'The Winner is ' + playerValue + '!';
     document.querySelector('.gameWinner').style.color = "greenYellow";
     document.querySelector('.gameWinner').style.fontSize = "40px";
-    document.querySelector('.gameWinner').style.animateName = "blinking";
-    document.querySelector('.gameWinner').style.animateDuration = "3s";
+    document.querySelector('.gameWinner').style.animation = "blinking 4s infinite linearx ";
+    document.querySelector('#box1').textContent = '';
+    document.querySelector('#box2').textContent = playerValue;
+    document.querySelector('#box3').textContent = '';
+    document.querySelector('#box4').textContent = 'W';
+    document.querySelector('#box5').textContent = 'O';
+    document.querySelector('#box6').textContent = 'N';
+    document.querySelector('#box7').textContent = '';
+    document.querySelector('#box8').textContent = '';
+    document.querySelector('#box9').textContent = '';
   }
   return allTheSame;
 }
+
+
+let restartBtn = document.querySelector('.restartBtn')
+restartBtn.addEventListener('click', function(){
+  document.querySelector('#player1Name').value = '';
+  document.querySelector('#player2Name').value = '';
+  document.querySelector('#message').textContent = 'Player 1 Choose your Value';
+  document.querySelector('#box1').textContent = '';
+  document.querySelector('#box2').textContent = '';
+  document.querySelector('#box3').textContent = '';
+  document.querySelector('#box4').textContent = '';
+  document.querySelector('#box5').textContent = '';
+  document.querySelector('#box6').textContent = '';
+  document.querySelector('#box7').textContent = '';
+  document.querySelector('#box8').textContent = '';
+  document.querySelector('#box9').textContent = '';
+  document.querySelector('.gameWinner').textContent = 'The Winner is...';
+  document.querySelector('.gameWinner').style.color = 'rgb(232, 43, 178)';
+  document.querySelector('.gameWinner').style.fontSize = '20px';
+})
+
